@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas - Meu Primeiro Site</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to right, #f6d365, #fda085);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #ff6f61;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #ff6f61;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    footer {
+      background-color: #ff6f61;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Lucas - Meu Primeiro Site
+  </header>
+
+  <main>
+    <h2>Minha História</h2>
+    <p>Olá! Meu nome é Lucas e esse é o meu primeiro site!</p>
+    <p>Comecei a criar esse site no dia <strong>15/04/2025</strong>. Passei por diversos problemas durante esse processo, aprendi muito, errei bastante, mas também me diverti. Foi uma jornada de aprendizado e superação.</p>
+    <p>Enfim, esse é meu primeiro site, e estou muito feliz de ter conseguido concluir.</p>
+    <p>Quero agradecer especialmente aos meus amigos <strong>Gordinho</strong> e <strong>XMP</strong> que me ajudaram e me apoiaram durante esse processo. Muito obrigado!</p>
+  </main>
+
+  <footer>
+    &copy; 2025 Lucas - Meu Primeiro Site
+  </footer>
+</body>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Obrigado com Confetes</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #fdf6ec;
+      overflow: hidden;
+      cursor: pointer;
+      font-family: sans-serif;
+    }
+
+    .thank-you {
+      position: absolute;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff4081;
+      animation: pop-up 1s ease forwards;
+    }
+
+    @keyframes pop-up {
+      0% {
+        transform: scale(0) translateY(0);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.2) translateY(-20px);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1) translateY(-50px);
+        opacity: 0;
+      }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: hsl(var(--hue), 100%, 60%);
+      animation: fall 1s linear forwards;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(200px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    document.body.addEventListener('click', (e) => {
+      // Mensagem Obrigado
+      const msg = document.createElement('div');
+      msg.textContent = 'Obrigado!';
+      msg.className = 'thank-you';
+      msg.style.left = e.clientX + 'px';
+      msg.style.top = e.clientY + 'px';
+      document.body.appendChild(msg);
+      setTimeout(() => msg.remove(), 1000);
+
+      // Confetes
+      for (let i = 0; i < 30; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = (e.clientX + (Math.random() * 100 - 50)) + 'px';
+        confetti.style.top = e.clientY + 'px';
+        confetti.style.setProperty('--hue', Math.floor(Math.random() * 360));
+        confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 1000);
+      }
+    });
+  </script>
+</body>
+</html>
+
